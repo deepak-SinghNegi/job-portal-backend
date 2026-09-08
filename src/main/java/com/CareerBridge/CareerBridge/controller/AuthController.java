@@ -1,5 +1,6 @@
 package com.CareerBridge.CareerBridge.controller;
 
+import com.CareerBridge.CareerBridge.dto.user.AuthResponse;
 import com.CareerBridge.CareerBridge.dto.user.LoginRequest;
 import com.CareerBridge.CareerBridge.dto.user.RegisterRequest;
 import com.CareerBridge.CareerBridge.dto.user.UserResponse;
@@ -23,7 +24,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(registerRequest));
     }
     @PostMapping("/login")
-    public ResponseEntity<UserResponse> loginUser (@Valid @RequestBody LoginRequest loginRequest){
+    public ResponseEntity<AuthResponse> loginUser (@Valid @RequestBody LoginRequest loginRequest){
         return ResponseEntity.status(HttpStatus.FOUND).body(userService.loginUser(loginRequest));
     }
 
